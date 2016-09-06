@@ -1,5 +1,5 @@
-# ngmonScheduler
-scheduler used in ngmon
+# ngmonMonitor
+web client used in ngmon
 
 attempt to translate the [moncgi](http://moncgi.sourceforge.net/index.php/mon.cgi/main) in javascript
 
