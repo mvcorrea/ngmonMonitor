@@ -1,0 +1,24 @@
+{
+  "name": "ngmon-monitor",
+  "version": "0.0.1",
+  "description": "web interface for ngmon",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvcorrea/ngmonMonitor.git"
+  },
+  "keywords": [
+    "ngmon",
+    "web",
+    "interface"
+  ],
+  "author": "Marcelo Correa <mvcorrea@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvcorrea/ngmonMonitor/issues"
+  },
+  "homepage": "https://github.com/mvcorrea/ngmonMonitor#readme"
+}
