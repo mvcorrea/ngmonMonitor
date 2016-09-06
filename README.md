@@ -1,17 +1,15 @@
 # ngmonMonitor
+
 web client used in ngmon
 
 attempt to translate the [moncgi](http://moncgi.sourceforge.net/index.php/mon.cgi/main) in javascript
 
 more links on the original mon [1], [2], [3], [4] which was written in perl
 
-must connect to an ngmonStatusManager
-
-
 ## About:
 
 ### Components:
-  * ~~ngmonManager~: main component
+  * ~~ngmonManager~~: integration component
   * [ngmonScheduler]: task scheduler module
   * _**ngmonMonitor**_: web client component
   * ~~ngmonAlert~~: alarm management
