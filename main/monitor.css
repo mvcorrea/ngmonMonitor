@@ -1,0 +1,76 @@
+* {
+    border-radius: 0 !important;
+    box-sizing: border-box;
+}
+
+body {
+    color: #1a2c37;
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+#list {
+    padding-top: 1em;
+    border: 1px solid #ccc;
+    width: 100vw;
+    vertical-align: middle;
+}
+
+.msg {
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-size: smaller;
+    vertical-align: middle;
+    text-align: left;
+    border: 1px solid #ccc;
+    margin: 0.5em 1em 0.5em 0em;       /* gap around the message */
+    background-color: #FFFFFF;
+}
+
+.msg:hover{
+    border: 1px solid #2C3539;
+}
+
+.desc {
+    padding-top: 0.5em;
+}
+
+.buttons {
+    vertical-align: middle;
+    text-align: right;
+    margin-left: 0.1em;
+}
+
+.badge {
+    vertical-align: middle;
+    font-size: small;
+}
+
+.badge#sla {
+    background-color: green;
+}
+
+.badge:hover{
+    background-color: #F1948A;
+}
+
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 2em;
+    height: 2em;
+    position: relative;
+    bottom: 1px;
+}
+
+}

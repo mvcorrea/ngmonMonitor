@@ -1,0 +1,9 @@
+{
+
+  "port": 8000,
+  "zmq": {
+    "port": 5000,
+    "serverAddr": "127.0.0.1",
+    "queueId": "server01"
+  }
+}

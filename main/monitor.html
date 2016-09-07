@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <title>ngMon Monitor</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/monitor.css">
+</head>
+<body>
+
+<div id="list" class="container"> </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+    var application = function(){
+        var skt = io('http://127.0.0.1:8000/');
+
+        skt.on('connect', function() {
+            console.log('socket.io connected to ', skt.host);
+        });
+
+        skt.on('event', function(data) {
+            var msg = data.content;
+
+
+            var htmlData = parseMsg(msg);
+            console.log( htmlData );
+
+            $('#list').append(htmlData);
+            //$('#list').html( $('#msg').html() + htmlData );
+            //$('#msg').text(msg.fail);
+        });
+    };
+
+    function parseMsg(msg){
+        return  '<div class="row msg">' +
+                '   <div class="col-md-10 line-clamp desc">'+ JSON.stringify(msg) +'</div>' +
+                '   <div class="row buttons">' +
+                '       <span id="sla" class="badge">'+ verifySLA(msg.elapsed, 14400) +'</span>' +
+                '       <span class="badge">DETAIL</span>' +
+                '       <input type="checkbox" />' +
+                '   </div>' +
+                '</div>';
+    }
+
+
+    function secondsToHms(d) {
+        d = Number(d);
+        var h = Math.floor(d / 3600);
+        var m = Math.floor(d % 3600 / 60);
+        return ((h > 0 ? h + "H" + (m < 10 ? "0" : "") : "0") + m );
+    }
+
+    function verifySLA(elapsed, sla){
+        if(elapsed > sla) $('#sla').css('background-color', 'red');
+        else $('#sla').css('background-color', 'green');
+        return secondsToHms(elapsed);
+    }
+
+    //  skt.on('event', (x) => $('#msg').append($('<li>').text(x.fail)));
+
+//    $('form').submit(function(){
+//        socket.emit('chat message', $('#m').val());
+//        $('#m').val('');
+//        return false;
+//    });
+//    socket.on('chat message', function(msg){
+//        $('#messages').append($('<li>').text(msg));
+//    });
+
+    $(function() { var app = application(); });
+
+</script>
+</body>
+</html>
